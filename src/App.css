@@ -1,0 +1,654 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f1a;
+  color: #e2e2f0;
+}
+
+.portfolio {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navbar ── */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #0f0f1a;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logo span { color: #a78bfa; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #999;
+  transition: color 0.2s, background 0.2s;
+  text-transform: capitalize;
+}
+
+.nav-links li:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+
+.nav-links li.active {
+  color: #a78bfa;
+  background: rgba(167,139,250,0.12);
+}
+
+/* ── Section base ── */
+.section {
+  padding: 60px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-alt {
+  background: rgba(255,255,255,0.02);
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.section-title span { color: #a78bfa; }
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 80px 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(167,139,250,0.15);
+  border: 2px solid #a78bfa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #a78bfa;
+  margin: 0 auto 24px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.hero h1 span { color: #a78bfa; }
+
+.hero p {
+  font-size: 16px;
+  color: #888;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.btn-primary {
+  background: #a78bfa;
+  color: #fff;
+  border: none;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover { background: #9670f5; }
+
+.btn-outline {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ccc;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: #a78bfa;
+  color: #a78bfa;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.stat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat strong {
+  font-size: 26px;
+  color: #a78bfa;
+}
+
+.stat span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ── About ── */
+/* JSX uses: about-grid, about-card, avatar-sm, socials, bio, info-list, info-row, open */
+.about-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-card {
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px 20px;
+}
+
+.avatar-sm {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(167,139,250,0.15);
+  border: 2px solid #a78bfa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #a78bfa;
+  margin: 0 auto 16px;
+}
+
+.about-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.about-card p {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.socials a {
+  font-size: 13px;
+  color: #a78bfa;
+  text-decoration: none;
+  padding: 7px;
+  border-radius: 8px;
+  border: 1px solid rgba(167,139,250,0.2);
+  transition: background 0.2s;
+}
+
+.socials a:hover { background: rgba(167,139,250,0.1); }
+
+.bio {
+  font-size: 15px;
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+}
+
+.info-row span {
+  font-size: 12px;
+  color: #666;
+  min-width: 90px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-row p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.open {
+  color: #4ade80 !important;
+  font-weight: 600;
+}
+
+/* ── Skills ── */
+/* JSX uses: skills-grid, skill-card, skill-top, skill-bar, skill-fill */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.skill-card:hover {
+  border-color: #a78bfa;
+  background: rgba(167,139,250,0.07);
+}
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-top h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.skill-top span {
+  font-size: 12px;
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+.skill-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.skill-fill {
+  height: 100%;
+  background: #a78bfa;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.skill-card p {
+  font-size: 12px;
+  color: #555;
+}
+
+/* ── Projects ── */
+/* JSX uses: projects-grid, proj-card, proj-bottom, tags, tag, proj-link */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.proj-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 24px;
+  transition: border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-card:hover { border-color: #a78bfa; }
+
+.proj-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.proj-card > p {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.proj-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(167,139,250,0.12);
+  color: #a78bfa;
+}
+
+.proj-link {
+  font-size: 13px;
+  color: #a78bfa;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.proj-link:hover { color: #fff; }
+
+/* ── Resume ── */
+.resume-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(167,139,250,0.08);
+  border: 1px solid rgba(167,139,250,0.2);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+}
+
+.resume-download p {
+  font-size: 15px;
+  color: #aaa;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.resume-col-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #a78bfa;
+  margin-top: 5px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 5px;
+  width: 1px;
+  height: calc(100% + 16px);
+  background: rgba(167,139,250,0.25);
+}
+
+.timeline-item:last-child .timeline-dot::after { display: none; }
+
+.timeline-body h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.timeline-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.timeline-meta span {
+  font-size: 13px;
+  color: #a78bfa;
+}
+
+/* Resume.jsx uses <em> for period, not a class */
+.timeline-meta em {
+  font-size: 12px;
+  color: #555;
+  font-style: normal;
+}
+
+.timeline-body p {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.6;
+}
+
+/* ── Contact ── */
+/* JSX uses: contact-grid, contact-info, contact-item, contact-form */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.contact-item span {
+  font-size: 11px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contact-item p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #eee;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #a78bfa;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* ── Footer ── */
+/* JSX uses: footer, footer-logo, footer-links, footer-copy */
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 32px 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.footer-logo span { color: #a78bfa; }
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.footer-links li {
+  cursor: pointer;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #555;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  text-transform: capitalize;
+}
+
+.footer-links li:hover {
+  color: #a78bfa;
+  background: rgba(167,139,250,0.08);
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: #333;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav { padding: 14px 20px; }
+  .nav-links { gap: 2px; }
+  .nav-links li { padding: 6px 10px; font-size: 12px; }
+  .section { padding: 48px 20px; }
+  .hero { padding: 60px 20px; }
+  .hero h1 { font-size: 28px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .resume-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .resume-download { flex-direction: column; gap: 16px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .hero-btns { flex-direction: column; align-items: center; }
+  .stats { grid-template-columns: 1fr; }
+}
