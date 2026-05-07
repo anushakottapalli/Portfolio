@@ -7,8 +7,7 @@ function Hero() {
       <div className="avatar">A</div>
       <h1>Hi, I'm <span>Anusha</span></h1>
       <p>
-        Frontend Developer & UI enthusiast. I build beautiful,
-        responsive web apps with React and modern CSS.
+        Full Stack Developer | React |Flask |Python|mySQL
       </p>
       <div className="hero-btns">
         <button className="btn-primary" onClick={() => scrollTo('projects')}>
